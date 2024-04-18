@@ -1,0 +1,922 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', 'sans-serif';
+    box-sizing: border-box;
+}
+body {
+    background: var(--primary-color);
+    color: var(--third-color);
+}
+
+html, body {
+    max-width: 100vw; /* Ensures the maximum width does not exceed the viewport width */
+    overflow-x: hidden; /* Hides horizontal overflow */
+}
+
+#header {
+    position: relative; /* Added to establish a new stacking context */
+    width: 100%;
+    height: 100vh;
+    background-image: url(images/background.png);
+    background-size: cover;
+    background-position: center; /* Changed */
+}
+
+.container {
+    padding: 10px 10%;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.logo {
+    width: 350px;
+}
+
+#icon{
+    width: 30px;
+    cursor: pointer;
+}
+
+:root{
+    --primary-color: #080808;
+    --secondary-color: #ff004f;
+    --third-color: rgb(255, 254, 254);
+    --fourth-color: #3d3d3d;
+    --gridline-color: grey;
+    --moon1: silver;
+}
+
+.light-theme{
+    --primary-color: #FAFAFA;
+    --secondary-color: #4b96f3;
+    --third-color: black;
+    --fourth-color: #e6e6e6;
+    --gridline-color: black;
+    --moon1: darkgrey;
+}
+
+nav ul li {
+    display: inline-block;
+    list-style: none;
+    margin: 10px 20px;
+}
+
+nav ul li a {
+    color: var(--third-color);
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+}
+
+nav ul li a::after {
+    content: '';
+    width: 0%;
+    height: 3px;
+    background: var(--secondary-color);
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: width 0.5s; /* Changed */
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+.header-text {
+    margin-top: 20%;
+    font-size: 30px;
+}
+
+.header-text h1 {
+    margin-top: 20px;
+    font-size: 60px;
+}
+
+.header-text p,
+.header-text h1 span {
+    color: var(--secondary-color);
+}
+
+.text{
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 4s steps(29), cursor .4s step-end infinite alternate;
+}
+
+
+.text2{
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 4s steps(29), cursor .4s step-end infinite alternate;
+}
+
+/*cursur blinking*/
+@keyframes cursor {
+    50% {border-color: white;}
+}
+
+@keyframes typing {
+    from {width: 0;}
+}
+
+/* about */
+
+#about {
+    margin-top: 180px;
+    color: var(--third-color);
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.about-col-1 {
+    flex-basis: 35%;
+}
+
+.about-col-1 img {
+    width: 100%;
+    border-radius: 15px;
+    transition: 0.5s;
+}
+
+.about-col-1 img:hover{
+    transform: scale(1.2); /* Scales up the image by 5% */
+    z-index: 10; /* Raises the scaled image above others */
+    border-radius: 10px;
+}
+
+.about-col-2 {
+    flex-basis: 60%;
+}
+
+.subtitle {
+    font-size: 60px;
+    font-weight: 600;
+    color: var(--third-color);
+}
+
+.tabTitles {
+    display: flex;
+    margin: 20px 0 40px;
+}
+
+.tabLinks {
+    margin-right: 50px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+}
+
+.tabLinks::after {
+    content: '';
+    width: 0;
+    height: 3px;
+    background: var(--secondary-color);
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    transition: width 0.5s;
+}
+
+.tabLinks.activeLink::after {
+    width: 50%;
+}
+
+.tabContents ul li {
+    list-style: none;
+    margin: 10px 0; /* Removed comma */
+    font-size: 18px;
+}
+
+.tabContents ul li span {
+    color: var(--secondary-color);
+    font-size: 20px;
+}
+
+.tabContents {
+    display: none;
+}
+
+.tabContents.activeTab {
+    display: block;
+}
+
+
+/*services*/
+
+#services {
+    margin-top: 40px;
+}
+
+#services h2 {
+    color: var(--third-color); /* Change to the desired color */
+}
+
+#services p {
+    color: var(--third-color); /* Change to the desired color */
+}
+
+.servicesList {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Corrected syntax */
+    grid-gap: 40px;
+    margin-top: 50px;
+}
+
+.servicesList div {
+    background: var(--fourth-color);
+    padding: 40px;
+    font-size: 13px;
+    font-weight: 400;
+    border-right: 10px;
+    transition: background 0.5s, transform 0.5s;   
+}
+
+.servicesList div i {
+    font-size: 50px;
+    margin-bottom: 30px;
+}
+
+.servicesList div h2 {
+    font-size: 30px; /* Set font size for the <h2> elements */
+}
+
+.servicesList div p {
+    font-size: 15px; /* Set font size for the <p> elements */
+    color: var(--third-color);
+}
+
+.servicesList div a {
+    text-decoration: none;
+    font-size: 15px; /* Set font size for the <a> elements */
+    color: var(--third-color);
+    margin-top: 20px;
+    display: inline-block;
+}
+
+.servicesList div:hover{
+    background: var(--secondary-color);
+    transform: translateY(-10px);
+
+}
+
+/* Portfolio */
+#portfolio {
+    margin-top: 40px;
+    color: var(--third-color);
+}
+
+.workList {
+    margin-top: 18px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Corrected syntax */
+    grid-gap: 40px;
+}
+
+.work {
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.work img {
+    width: 100%;
+    border-radius: 10px;
+    display: block;
+    transition: transform 0.5s ease; /* Added transition property */
+}
+
+.layer {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), var(--secondary-color));
+    border-radius: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    text-align: center;
+    font-size: 14px;
+    opacity: 0; /* Initially hide the text */
+    transition: opacity 0.5s; /* Added transition for opacity */
+}
+
+.layer h3 {
+    font-weight: 500;
+    margin-bottom: 20px;
+    color: #fff;
+    font-size: large;
+}
+
+.layer p {
+    color: #fff;
+}
+
+.layer a {
+    margin-top: 20px;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 60px;
+    background: var(--third-color);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    text-align: center;
+}
+
+.work:hover img {
+    transform: scale(1.1); /* Adjusted scale value */
+}
+
+.work:hover .layer {
+    opacity: 1; /* Show the text when hovering over the .work element */
+}
+
+.btn{
+    display: block;
+    margin: 50px auto;
+    width: fit-content;
+    border: 1px solid var(--secondary-color);
+    padding: 14px 50px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: var(--third-color);
+}
+
+.btn:hover{
+    background: var(--secondary-color);
+}
+
+#creative {
+    margin-top: 40px;
+    color: var(--third-color); 
+}
+
+.pictures {
+    margin-top: 40px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* 6 columns */
+    grid-template-rows: repeat(6, auto); /* 6 rows, auto-adjusting height */
+    gap: 40px; /* space between images */
+}
+  
+.grid-item {
+    width: 100%; /* Ensures images take full width of the cell */
+    height: auto; /* Keeps the aspect ratio of images */
+    transition: transform 0.3s ease-in-out; /* Ensures smooth scaling when hovered */
+}
+
+.medium {
+    grid-column: span 2; /* Medium images span 2 columns */
+    grid-row: span 2; /* Medium images span 2 rows */
+}
+
+.btn3 {
+    display: block;
+    margin-top: -15px; /* Adjust this value to position higher as needed */
+    margin-left: auto; /* Centers the button horizontally */
+    margin-right: auto; /* Centers the button horizontally */
+    width: fit-content;
+    border: 1px solid var(--secondary-color);
+    padding: 14px 50px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: var(--third-color);
+}
+
+.btn3:hover {
+    background: var(--secondary-color);
+}
+
+.grid-item:hover {
+    transform: scale(1.2); /* Scales up the image by 5% */
+    z-index: 10; /* Raises the scaled image above others */
+    border-radius: 10px;
+}
+
+/* Contact */
+#contact {
+    margin-top: 40px;
+    color: var(--third-color);
+}
+
+.contactLeft {
+    flex-basis: 40%;
+}
+
+.contactRight {
+    flex-basis: 50%;
+}
+
+.contactLeft p {
+    margin-top: 30px;
+    font-size: 25px;
+}
+
+.contactLeft p i {
+    color: var(--secondary-color);
+    font-size: 25px;
+    margin-right: 15px;
+}
+
+.socialIcon {
+    margin-top: 30px;
+}
+
+.socialIcon a {
+    text-decoration: none;
+    font-size: 30px;
+    margin-right: 15px;
+    color: var(--third-color);
+    display: inline-block;
+}
+
+.socialIcon a:hover{
+    color: var(--secondary-color);
+    transform: translateY(-5px);
+}
+
+.btn.btn2{
+    display: inline-block;
+    background: var(--secondary-color);
+}
+
+.contactRight form{
+    width: 100%;
+}
+form input, form textarea{
+    width: 100%;
+    border: 0;
+    outline: navajowhite;
+    background: var(--fourth-color);
+    padding: 15px;
+    margin: 15px 0;
+    color: var(--secondary-color);
+    border-radius: 6px;
+}
+
+form btn2{
+    padding: 14px 60px;
+    font-size: 18px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.copyright{
+    width: 100%;
+    text-align: center;
+    padding: 25px 0;
+    background: var(--primary-color);
+    font-weight: 300;
+    margin-top: 20px;
+}
+
+.copyright i{
+    color: var(--secondary-color);
+}
+
+
+
+
+#solarSys {
+    position: absolute; /* Or 'fixed' if you want the solar system to stay in place on scroll */
+    top: 50%; /* Keeps the vertical position at the center */
+    left: 50%; /* This will still be the reference point for centering the sun */
+    transform: translate(-50%, -50%); /* Correctly centers the container */
+    z-index: -1; /* Ensures it's behind the content but above the background */
+    width: 100vw; /* Sets the width to be the full viewport width */
+    height: 100vh; /* Maintains the full viewport height */
+    overflow: hidden; /* Hides any overflow */
+}
+
+.solar {
+    position: absolute; /* This needs to be absolute if we want the sun to stay in the same spot */
+    width: 100%; /* Ensures the .solar div fills its parent #solarSys container */
+    height: 100%; /* Height is set to fill the parent as well */
+    font-size: 7px; /* Maintains the relative sizing for orbiting elements */
+}
+
+
+.sun {
+    position: absolute;
+    top: 50%;
+    left: 50%; /* This will keep the sun in the center of the viewport */
+    transform: translate(-50%, -50%); /* Correctly centers the sun */
+    width: 15em; /* The sun's size */
+    height: 15em; /* The sun's size */
+    background-color: yellow; /* The sun's color */
+    border-radius: 50%; /* Makes the sun a circle */
+    box-shadow: 0 0 10em white; /* The glow effect */
+    /* Make sure the sun has a higher z-index if you want it above other content */
+    z-index: 2;
+}
+
+.mercury-orbit {
+    position: absolute; /* Positions the Earth's orbit absolutely within the .solar container */
+    top: 50%; /* Centers the Earth's orbit path vertically */
+    left: 50%; /* Centers the Earth's orbit path horizontally */
+    width: 60em; /* Width of Earth's orbit path */
+    height: 60em; /* Height of Earth's orbit path */
+    transform-origin: top left; /* Sets the origin for transformations */
+    animation: orbitMercury 17.6s linear infinite; /* Applies the animation to simulate orbiting */
+}
+
+.mercury-orbit::before {
+    content: ''; /* Required for the pseudo-element to display */
+    position: absolute; /* Positions the orbit line absolutely */
+    width: 30em; /* Width of the visible orbit line */
+    height: 30em; /* Height of the visible orbit line */
+    border: 1px solid var(--gridline-color); /* Styles the orbit line */
+    border-radius: 50%; /* Makes the orbit line circular */
+    top: 0; /* Positions the orbit line at the top of the .earth-orbit */
+    left: 0; /* Positions the orbit line at the left of the .earth-orbit */
+    transform: translate(-50%, -50%); /* Centers the orbit line within the .earth-orbit */
+}
+
+.mercury {
+    position: absolute; /* Positions Mercury absolutely within the .mercury-orbit path */
+    top: 0; /* Aligns the top edge of Mercury with the top edge of its orbit path */
+    left: 50%; /* Positions Mercury halfway across the orbit's width */
+    width: 3em; /* Diameter of Mercury */
+    height: 3em; /* Diameter of Mercury */
+    background-color: darkgray; /* Actual color of Mercury */
+    border-radius: 50%; /* Makes Mercury circular */
+    transform: translate(-17em, -5em); /* Adjusts Mercury's position to be on the orbit line */
+}
+
+.venus-orbit {
+    position: absolute; /* Positions the Earth's orbit absolutely within the .solar container */
+    top: 50%; /* Centers the Earth's orbit path vertically */
+    left: 50%; /* Centers the Earth's orbit path horizontally */
+    width: 80em; /* Width of Earth's orbit path */
+    height: 80em; /* Height of Earth's orbit path */
+    transform-origin: top left; /* Sets the origin for transformations */
+    animation: orbitVenus 24.3s linear infinite; /* Applies the animation to simulate orbiting */
+}
+
+.venus-orbit::before {
+    content: ''; /* Required for the pseudo-element to display */
+    position: absolute; /* Positions the orbit line absolutely */
+    width: 50em; /* Width of the visible orbit line */
+    height: 50em; /* Height of the visible orbit line */
+    border: 1px solid var(--gridline-color); /* Styles the orbit line */
+    border-radius: 50%; /* Makes the orbit line circular */
+    top: 0; /* Positions the orbit line at the top of the .earth-orbit */
+    left: 0; /* Positions the orbit line at the left of the .earth-orbit */
+    transform: translate(-50%, -50%); /* Centers the orbit line within the .earth-orbit */
+}
+
+.venus {
+    position: absolute; /* Positions Mercury absolutely within the .mercury-orbit path */
+    top: 0; /* Aligns the top edge of Mercury with the top edge of its orbit path */
+    left: 50%; /* Positions Mercury halfway across the orbit's width */
+    width: 3em; /* Diameter of Mercury */
+    height: 3em; /* Diameter of Mercury */
+    background-color: rgb(242, 242, 199); /* Actual color of Mercury */
+    border-radius: 50%; /* Makes Mercury circular */
+    transform: translate(-17em, -5em); /* Adjusts Mercury's position to be on the orbit line */
+}
+
+.earth-orbit {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 40em; /* Original size for the earth orbit */
+    height: 40em;
+    transform-origin: top left;
+    animation: orbitEarth 36.5s linear infinite;
+}
+
+.earth-orbit::before {
+    content: '';
+    position: absolute;
+    width: 80em;
+    height: 80em;
+    border: 1px solid var(--gridline-color); /* Orbit line for Earth */
+    border-radius: 50%;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+}
+
+.earth {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 6em; /* Original size for the earth */
+    height: 6em;
+    background-color: aqua;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    
+}
+
+.moon-orbit {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 9em; /* Original size for the moon orbit */
+    height: 9em;
+    transform-origin: top left;
+    animation: orbitMoon 2s linear infinite;
+}
+
+.moon-orbit::before {
+    content: '';
+    position: absolute;
+    width: 18em;
+    height: 18em;
+    border: 1px solid var(--gridline-color); /* Orbit line for Moon */
+    border-radius: 50%;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+}
+
+.moon {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 2em; /* Original size for the moon */
+    height: 2em;
+    background-color: var(--moon1);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.mars-orbit {
+    position: absolute; /* Positions the Earth's orbit absolutely within the .solar container */
+    top: 50%; /* Centers the Earth's orbit path vertically */
+    left: 50%; /* Centers the Earth's orbit path horizontally */
+    width: 140em; /* Width of Earth's orbit path */
+    height: 140em; /* Height of Earth's orbit path */
+    transform-origin: top left; /* Sets the origin for transformations */
+    animation: orbitMars 24.3s linear infinite; /* Applies the animation to simulate orbiting */
+}
+
+.mars-orbit::before {
+    content: ''; /* Required for the pseudo-element to display */
+    position: absolute; /* Positions the orbit line absolutely */
+    width: 110em; /* Width of the visible orbit line */
+    height: 110em; /* Height of the visible orbit line */
+    border: 1px solid var(--gridline-color); /* Styles the orbit line */
+    border-radius: 50%; /* Makes the orbit line circular */
+    top: 0; /* Positions the orbit line at the top of the .earth-orbit */
+    left: 0; /* Positions the orbit line at the left of the .earth-orbit */
+    transform: translate(-50%, -50%); /* Centers the orbit line within the .earth-orbit */
+}
+
+.mars {
+    position: absolute; /* Positions Mercury absolutely within the .mercury-orbit path */
+    top: 0; /* Aligns the top edge of Mercury with the top edge of its orbit path */
+    left: 50%; /* Positions Mercury halfway across the orbit's width */
+    width: 3em; /* Diameter of Mercury */
+    height: 3em; /* Diameter of Mercury */
+    background-color: #e77d11; /* Actual color of Mercury */
+    border-radius: 50%; /* Makes Mercury circular */
+    transform: translate(-17em, -5em); /* Adjusts Mercury's position to be on the orbit line */
+}
+
+.jupiter-orbit {
+    position: absolute; /* Positions the Earth's orbit absolutely within the .solar container */
+    top: 50%; /* Centers the Earth's orbit path vertically */
+    left: 50%; /* Centers the Earth's orbit path horizontally */
+    width: 170em; /* Width of Earth's orbit path */
+    height: 170em; /* Height of Earth's orbit path */
+    transform-origin: top left; /* Sets the origin for transformations */
+    animation: orbitJupiter 100.3s linear infinite; /* Applies the animation to simulate orbiting */
+}
+
+.jupiter-orbit::before {
+    content: ''; /* Required for the pseudo-element to display */
+    position: absolute; /* Positions the orbit line absolutely */
+    width: 145em; /* Width of the visible orbit line */
+    height: 145em; /* Height of the visible orbit line */
+    border: 1px solid var(--gridline-color); /* Styles the orbit line */
+    border-radius: 50%; /* Makes the orbit line circular */
+    top: 0; /* Positions the orbit line at the top of the .earth-orbit */
+    left: 0; /* Positions the orbit line at the left of the .earth-orbit */
+    transform: translate(-50%, -50%); /* Centers the orbit line within the .earth-orbit */
+}
+
+.jupiter {
+    position: absolute; /* Positions Mercury absolutely within the .mercury-orbit path */
+    top: 0; /* Aligns the top edge of Mercury with the top edge of its orbit path */
+    left: 50%; /* Positions Mercury halfway across the orbit's width */
+    width: 8em; /* Diameter of Mercury */
+    height: 8em; /* Diameter of Mercury */
+    background-color: #a59186; /* Actual color of Mercury */
+    border-radius: 50%; /* Makes Mercury circular */
+    transform: translate(-17em, -5em); /* Adjusts Mercury's position to be on the orbit line */
+}
+
+.saturn-orbit {
+    position: absolute; /* Positions the Earth's orbit absolutely within the .solar container */
+    top: 50%; /* Centers the Earth's orbit path vertically */
+    left: 50%; /* Centers the Earth's orbit path horizontally */
+    width: 220em; /* Width of Earth's orbit path */
+    height: 220em; /* Height of Earth's orbit path */
+    transform-origin: top left; /* Sets the origin for transformations */
+    animation: orbitSaturn 200s linear infinite; /* Applies the animation to simulate orbiting */
+}
+
+.saturn-orbit::before {
+    content: ''; /* Required for the pseudo-element to display */
+    position: absolute; /* Positions the orbit line absolutely */
+    width: 195em; /* Width of the visible orbit line */
+    height: 195em; /* Height of the visible orbit line */
+    border: 1px solid var(--gridline-color); /* Styles the orbit line */
+    border-radius: 50%; /* Makes the orbit line circular */
+    top: 0; /* Positions the orbit line at the top of the .earth-orbit */
+    left: 0; /* Positions the orbit line at the left of the .earth-orbit */
+    transform: translate(-50%, -50%); /* Centers the orbit line within the .earth-orbit */
+}
+
+.saturn {
+    position: absolute; /* Positions Mercury absolutely within the .mercury-orbit path */
+    top: 0; /* Aligns the top edge of Mercury with the top edge of its orbit path */
+    left: 50%; /* Positions Mercury halfway across the orbit's width */
+    width: 8em; /* Diameter of Mercury */
+    height: 8em; /* Diameter of Mercury */
+    background-color: #ceb8b8; /* Actual color of Mercury */
+    border-radius: 50%; /* Makes Mercury circular */
+    transform: translate(-17em, -5em); /* Adjusts Mercury's position to be on the orbit line */
+}
+
+
+
+@keyframes orbitEarth {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes orbitMoon {
+    to {
+        transform: rotate(-360deg);
+    }
+}
+
+@keyframes orbitMercury {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes orbitVenus {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+@keyframes orbitMars {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes orbitJupiter {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes orbitSaturn {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+#creative-video .container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+
+.video-section {
+    margin-top: 40px;
+    display: flex;
+    align-items: center;  /* Align items vertically */
+    justify-content: space-between;  /* Space between description and video */
+    flex-direction: row-reverse;  /* Reverses the order of flex items */
+    margin-bottom: 20px;
+}
+
+.video-description {
+    flex: 1;  /* Takes up 50% of the space */
+    margin-left: 20px;  /* Space between description and video on the right */
+    font-size: 23px;
+    color: var(--third-color);  /* White text color */
+    background-color: var(--fourth-color);  /* Dark background for the description box */
+    padding: 15px;  /* Adequate padding around the text */
+    border-radius: 8px;  /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5);  /* Subtle shadow for depth */
+    text-align: center;
+}
+
+.video-description:hover{
+    transform: translateY(-15px);
+    background: linear-gradient(to bottom, var(--fourth-color), var(--secondary-color));
+    transition: background 0.5s, transform 0.5s;   
+}
+
+
+video {
+    flex: 1;  /* Takes up 50% of the space */
+    max-width: 500px;  /* Maximum width for the video */
+    height: auto;  /* Maintain aspect ratio */
+}
+
+video:hover{
+    box-shadow: 0 0 3em white; /* The glow effect */
+    transform: translateY(-10px);
+    transition: background 0.5s, transform 0.5s;   
+}
+
+.video-section i{
+    font-size: 60px; /* Sets the size of the icon */
+    color: var(--third-color); /* Sets the color of the icon */
+    margin-bottom: 10px; /* Adds space between the icon and the text */
+}
+
+
+/*css for small screen*/
+
+.fa-solid.fa-bars, .fa-solid.fa-x {
+    display: none;
+}
+
+@media only screen and (max-width: 600px) {
+    .header-text {
+        margin-top: 100px; /* Adjust this value as needed to prevent overlap with the navbar */
+        font-size: 16px;
+    }
+
+    .header-text h1 {
+        font-size: 30px; /* Adjust this size if it's still too large */
+    }
+
+    .fa-solid.fa-bars, .fa-solid.fa-x {
+        display: block; /* Ensures icons are visible on mobile */
+        position: absolute; /* Position the icon absolutely within the nav */
+        top: 10px; /* Adjust as needed */
+        right: 10px; /* Adjust as needed */
+        font-size: 25px; /* Size of the icon */
+        z-index: 5; /* Ensures it's above the other elements */
+    }
+
+    nav ul {
+        display: block;
+        width: 100%; 
+        box-sizing: border-box;
+        background: var(--secondary-color);
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 40%; /* Adjust width to give more space for text */
+        height: 100vh;
+        padding-top: 60px; /* Reduced padding to better accommodate items */
+        text-align: left; /* Center text in the menu */
+        overflow-y: auto; /* Allows scrolling if the content is too long */
+        padding-left: 0; /* Removes left padding if any, allowing list items to align to the very left */
+        padding-right: 0; /* Removes right padding if any */
+        text-align: left; /* Ensures that the text aligns to the left side */
+    }
+
+    nav li {
+        display: block;
+        width: 100%; /* Each li takes up the full width of the ul */
+        margin: 0; /* Removes any margin that could affect the layout */
+        padding: 10px 30px; /* Adds some padding inside each li, adjust as needed */
+        box-sizing: border-box; /* Include padding in the element's total width and height */
+        text-align: left; /* Aligns the text to the left within the list items */
+    }
+
+}
+
+

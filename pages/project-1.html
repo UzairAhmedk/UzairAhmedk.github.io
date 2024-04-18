@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Partfolio Website</title>
+    <link rel="stylesheet" href="styles1.css">
+    <script src="https://kit.fontawesome.com/b4b46be19c.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="images/logo.png" class="logo" id="logo">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Portfolio </a></li>
+                    <li><a href="#">Creative</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <i class="fa-solid fa-x"></i>
+                </ul>
+                <img src="images/sun.png" id="icon">
+                <i class="fa-solid fa-bars"></i>
+            </nav>
+     </div>
+
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="images/me.jpg">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="subtitle">About Me</h1>
+                    <p> I am a 19 year old Computer Science student studying at the University of Guelph, with a passion for all things tech. I started coding at 16 and have developed skills in Java, Python, C, SQL, HTML, JavaScript, and CSS. I am currently building this website as part of my portfolio. I am driven by the challenge of creating technologies that can genuinely improve people's lives. Outside of programming, I enjoy photography, videography, and flying drones—hobbies that keep my creativity sharp and my problem-solving skills keen.
+                        <br>
+                        <br>
+                        Im actively seeking co-op opportunities where I can bring my enthusiasm and expertise to your team.</p>
+    
+                    <div class="tabTitles">
+                        <p class="tabLinks activeLink" onclick="opentab('skills')">Skills</p>
+                        <p class="tabLinks" onclick="opentab('experience')">Experience</p>
+                        <p class="tabLinks" onclick="opentab('education')">Education</p>
+                    </div>
+                    <div class="tabContents activeTab" id="skills">
+                        <ul>
+                            <li><span>C Programming</span><br>Utilizing the robust and powerful C language for system-level programming and performance-critical solutions.</li>
+                            <li><span>Java</span><br>Building versatile applications with Java, focusing on object-oriented solutions for enterprise-grade systems.</li>
+                            <li><span>Python</span><br>Developing applications with Python, renowned for its readability and efficiency in data analysis, web development, and scripting.</li>
+                            <li><span>JavaScript</span><br>Creating dynamic and interactive web experiences with JavaScript, the backbone of modern web applications.</li>
+                            <li><span>HTML/CSS</span><br>Designing responsive and visually appealing websites using HTML and CSS, the foundational technologies of the web.</li>
+                            <li><span>SQL</span><br>Managing and querying databases efficiently with SQL, essential for handling complex data-driven tasks.</li>
+                        </ul>
+                    </div>
+                    <div class="tabContents" id="experience">
+                        <ul>
+                            <li><span>Exploring Technologies</span><br>Eager to dive into new programming languages and technologies, committed to learning through coursework and personal projects.</li>
+                            <li><span>Skills Development</span><br>Actively enhancing my technical skills through academic studies and hands-on practice in computer science.</li>
+                            <li><span>Project Experience</span><br>Seeking opportunities to contribute to real-world projects, aiming to apply theoretical knowledge in practical scenarios.</li>
+                        </ul>
+                    </div>
+                    <div class="tabContents" id="education">
+                        <ul>
+                            <li><span>University of Guelph</span><br>Pursuing a Bachelor's degree in Computer Science with Co-op. Engaging in a rigorous academic curriculum with practical experience through cooperative education.</li>
+                            <li><span>Udemy Courses</span><br>Completed comprehensive online courses in C and Java, enhancing my programming skills and understanding of key concepts in software development.</li>
+                            <li><span>Continuous Learning</span><br>Committed to continuous professional development by exploring additional programming languages and technologies to stay abreast of industry trends.</li>
+                        </ul>                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

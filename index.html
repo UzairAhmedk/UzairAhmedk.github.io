@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Partfolio Website</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/b4b46be19c.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<div id="header">
+    <div class="container">
+        <nav>
+            <img src="images/logo.png" class="logo" id="logo">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Portfolio </a></li>
+                <li><a href="#">Creative</a></li>
+                <li><a href="#">Contact</a></li>
+                <i class="fa-solid fa-x"></i>
+            </ul>
+            <img src="images/sun.png" id="icon">
+            <i class="fa-solid fa-bars"></i>
+        </nav>
+        <div class="header-text">
+            <p class="text">Computer Science Student...</p>
+            <h1 class="text2">Hi, I am <span>Uzair</span><br> This is my Personal Website</h1>
+        </div>
+ </div>
+
+<div id="solarSys">
+    <div class="solar">
+        <div class="sun"></div>
+        <div class="mercury-orbit">
+            <div class="mercury"></div>
+        </div>
+        <div class="venus-orbit">
+            <div class="venus"></div>
+        </div>
+        <div class="earth-orbit">
+            <div class="earth">
+                <div class="moon-orbit">
+                    <div class="moon"></div>
+                </div>
+            </div>
+        </div>
+        <div class="mars-orbit">
+            <div class="mars"></div>
+        </div>
+        <div class="jupiter-orbit">
+            <div class="jupiter"></div>
+        </div>
+        <div class="saturn-orbit">
+            <div class="saturn">
+                <div class="ring-orbit">
+                    <div class="ring"></div>
+                </div>
+            </div>
+        </div>
+        <div class="neptune-orbit">
+            <div class="neptune"></div>
+        </div>
+        <div class="uranus-orbit">
+            <div class="uranus"></div>
+        </div>
+    </div>
+</div>
+ 
+
+ <div id="about">
+    <div class="container">
+        <div class="row">
+            <div class="about-col-1">
+                <img src="images/me.jpg">
+            </div>
+            <div class="about-col-2">
+                <h1 class="subtitle">About Me</h1>
+                <p> I am a 19 year old Computer Science student studying at the University of Guelph, with a passion for all things tech. I started coding at 16 and have developed skills in Java, Python, C, SQL, HTML, JavaScript, and CSS. I am currently building this website as part of my portfolio. I am driven by the challenge of creating technologies that can genuinely improve people's lives. Outside of programming, I enjoy photography, videography, and flying drones—hobbies that keep my creativity sharp and my problem-solving skills keen.
+                    <br>
+                    <br>
+                    Im actively seeking co-op opportunities where I can bring my enthusiasm and expertise to your team.</p>
+
+                <div class="tabTitles">
+                    <p class="tabLinks activeLink" onclick="opentab('skills')">Skills</p>
+                    <p class="tabLinks" onclick="opentab('experience')">Experience</p>
+                    <p class="tabLinks" onclick="opentab('education')">Education</p>
+                </div>
+                <div class="tabContents activeTab" id="skills">
+                    <ul>
+                        <li><span>C Programming</span><br>Utilizing the robust and powerful C language for system-level programming and performance-critical solutions.</li>
+                        <li><span>Java</span><br>Building versatile applications with Java, focusing on object-oriented solutions for enterprise-grade systems.</li>
+                        <li><span>Python</span><br>Developing applications with Python, renowned for its readability and efficiency in data analysis, web development, and scripting.</li>
+                        <li><span>JavaScript</span><br>Creating dynamic and interactive web experiences with JavaScript, the backbone of modern web applications.</li>
+                        <li><span>HTML/CSS</span><br>Designing responsive and visually appealing websites using HTML and CSS, the foundational technologies of the web.</li>
+                        <li><span>SQL</span><br>Managing and querying databases efficiently with SQL, essential for handling complex data-driven tasks.</li>
+                    </ul>
+                </div>
+                <div class="tabContents" id="experience">
+                    <ul>
+                        <li><span>Exploring Technologies</span><br>Eager to dive into new programming languages and technologies, committed to learning through coursework and personal projects.</li>
+                        <li><span>Skills Development</span><br>Actively enhancing my technical skills through academic studies and hands-on practice in computer science.</li>
+                        <li><span>Project Experience</span><br>Seeking opportunities to contribute to real-world projects, aiming to apply theoretical knowledge in practical scenarios.</li>
+                    </ul>
+                </div>
+                <div class="tabContents" id="education">
+                    <ul>
+                        <li><span>University of Guelph</span><br>Pursuing a Bachelor's degree in Computer Science with Co-op. Engaging in a rigorous academic curriculum with practical experience through cooperative education.</li>
+                        <li><span>Udemy Courses</span><br>Completed comprehensive online courses in C and Java, enhancing my programming skills and understanding of key concepts in software development.</li>
+                        <li><span>Continuous Learning</span><br>Committed to continuous professional development by exploring additional programming languages and technologies to stay abreast of industry trends.</li>
+                    </ul>                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="services">
+    <div class="container">
+        <h1 class="subtitle">My Services</h1>
+        <div class="servicesList">
+            <div>
+                <i class="fas fa-code"></i> <!-- Icon for Web Development -->
+                <h2>Website Building</h2>
+                <p>Custom website development for businesses looking to establish or enhance their online presence. Tailored solutions to meet your specific business needs.</p>
+               <!--<a href="#">Learn More</a>-->
+            </div>
+            <div>
+                <i class="fas fa-chalkboard-teacher"></i> <!-- Icon for Education/Tuition -->
+                <h2>Programming Tuition</h2>
+                <p>One-on-one and group tuition services for students eager to learn programming. From basics to advanced topics, I offer courses in various programming languages.</p>
+                 <!--<a href="#">Learn More</a>-->
+            </div>
+            <div>
+                <i class="fas fa-tools"></i> <!-- Icon for Custom Software -->
+                <h2>Custom Software Solutions</h2>
+                <p>Developing custom software applications to streamline operations, increase productivity, and solve unique challenges for businesses and researchers.</p>
+                  <!--<a href="#">Learn More</a>-->
+            </div>
+        </div>
+    </div>
+</div>
+<div id="portfolio">
+    <div class="container">
+        <h1 class="subtitle">My Portfolio</h1>
+        <div class="workList">
+            <div class="work">
+                <img src="images/Service1.png">
+                <div class="layer">
+                    <h3>Personal Partfolio Website</h3>
+                    <p>This very website is the first of many projects</p>
+                    <a href="pages/project-1.html"><i class="fa-solid fa-link"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="images/work-2.png">
+                <div class="layer">
+                    <h3>Coming Soon</h3>
+                    <p></p>
+                    <a href="https://github.com/UzairAhmedk"><i class="fa-solid fa-link"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="images/work-3.png">
+                <div class="layer">
+                    <h3>Coming Soon</h3>
+                    <p></p>
+                    <a href="https://github.com/UzairAhmedk"><i class="fa-solid fa-link"></i></a>
+                </div>
+            </div>
+        </div>
+        <a href="https://github.com/UzairAhmedk" class="btn">See More</a>
+    </div>
+
+</div>
+<div id="creative">
+    <div class="container">
+        <h1 class="subtitle">My photography</h1>
+        <div class="pictures">
+            <div class="grid-container">
+                <img src="images/Photog1.jpg" class="grid-item medium">
+                <img src="images/photog4.jpg" class="grid-item medium">
+                <img src="images/photog5.jpg" class="grid-item medium">
+                <img src="images/photog7.jpg" class="grid-item medium">
+                <img src="images/photog8.jpg" class="grid-item medium">
+                <img src="images/photog9.jpg" class="grid-item medium">
+              </div>
+        </div>
+        <a href="https://www.instagram.com/uzair.ahmed_photography/" class="btn3">See More</a>
+    </div>
+</div>
+
+<div id="creative-video">
+    <div class="container">
+        <h1 class="subtitle">Some Videography</h1>
+        <div class="video-section">
+            <p class="video-description">
+                <i class="fa-brands fa-fly"></i> 
+               <br> This video marks my debut in drone piloting and video editing. I began honing my skills in my neighborhood, capturing the familiar landscapes from thrilling new heights. The experience gained here was just the preparation I needed for shooting more ambitious scenes during a scenic vacation.</p>
+            <video controls src="images/ForInsta3 copy.mov" width="500"></video>
+        </div>
+    </div>
+</div>
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contactLeft">
+                <h1 class="subtitle">Contact Me :)</h1>
+                <p><i class="fa-solid fa-envelope"></i> hsuzaira1@gmail.com</p>
+                <p><i class="fa-solid fa-phone"></i> 647-573-5406</p>
+                <div class="socialIcon"> <!-- Changed class name to "socialIcon" -->
+                    <a href="https://www.facebook.com/profile.php?id=100083778383129"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/uzair.ahmed_k/"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/uzairahmedk/"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://github.com/UzairAhmedk"><i class="fa-brands fa-github"></i></a>
+                </div>
+                <a href="images/my-cv.pdf" download class="btn btn2">Download CV</a>
+            </div>
+            <div class="contactRight">
+                <form>
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="Message" id="" rows="6" placeholder="Your Message"></textarea>
+                    <button type="submit" class="btn btn2">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+        <p>Copyright © Uzair. Made by Me <i class="fa-solid fa-pen"></i></p>
+    </div>
+</div>
+
+
+<script>
+
+var tabLinks = document.getElementsByClassName('tabLinks');
+var tabContents = document.getElementsByClassName('tabContents');
+
+function opentab(tabname){
+    for(tabLink of tabLinks){
+        tabLink.classList.remove("activeLink");
+    }
+    for(tabContent of tabContents){
+        tabContent.classList.remove("activeTab");
+    }
+    event.currentTarget.classList.add("activeLink")
+    document.getElementById(tabname).classList.add("activeTab")
+}
+
+    var icon = document.getElementById('icon')
+    var logo = document.getElementById('logo')
+
+    icon.onclick = function(){
+        document.body.classList.toggle("light-theme")
+        if(document.body.classList.contains("light-theme")){
+            icon.src = "images/moon.png"
+            logo.src = "images/logo2.png"
+        }else{
+            icon.src = "images/sun.png"
+            logo.src = "images/logo.png"
+        }
+    }
+
+</script>
+
+
+</body>
+</html>
