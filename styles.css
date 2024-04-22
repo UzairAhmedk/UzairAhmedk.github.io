@@ -12,7 +12,9 @@ body {
 html, body {
     max-width: 100vw; /* Ensures the maximum width does not exceed the viewport width */
     overflow-x: hidden; /* Hides horizontal overflow */
+    scroll-behavior: smooth;
 }
+
 
 #header {
     position: relative; /* Added to establish a new stacking context */
@@ -461,6 +463,10 @@ nav ul li a:hover::after {
 .btn.btn2{
     display: inline-block;
     background: var(--secondary-color);
+    padding: 14px 60px;
+    font-size: 18px;
+    margin-top: 20px;
+    cursor: pointer;
 }
 
 .contactRight form{
@@ -477,12 +483,6 @@ form input, form textarea{
     border-radius: 6px;
 }
 
-form btn2{
-    padding: 14px 60px;
-    font-size: 18px;
-    margin-top: 20px;
-    cursor: pointer;
-}
 
 .copyright{
     width: 100%;
@@ -867,18 +867,21 @@ video:hover{
 
 /*css for small screen*/
 
-.fa-solid.fa-bars, .fa-solid.fa-x {
-    display: none;
+#menu-bars, #menu-x {
+    display: none; /* Default hidden state for all screens */
 }
 
 @media only screen and (max-width: 600px) {
     .header-text {
-        margin-top: 100px; /* Adjust this value as needed to prevent overlap with the navbar */
+        margin-top: 240px; /* Adjust this value as needed to prevent overlap with the navbar */
         font-size: 16px;
+        word-wrap: break-word;
     }
 
+
     .header-text h1 {
-        font-size: 30px; /* Adjust this size if it's still too large */
+        font-size: 35px; /* Adjust this size if it's still too large */
+       
     }
 
     .fa-solid.fa-bars, .fa-solid.fa-x {
@@ -897,7 +900,7 @@ video:hover{
         background: var(--secondary-color);
         position: fixed;
         top: 0;
-        right: 0;
+        right: -200px;
         width: 40%; /* Adjust width to give more space for text */
         height: 100vh;
         padding-top: 60px; /* Reduced padding to better accommodate items */
@@ -906,6 +909,8 @@ video:hover{
         padding-left: 0; /* Removes left padding if any, allowing list items to align to the very left */
         padding-right: 0; /* Removes right padding if any */
         text-align: left; /* Ensures that the text aligns to the left side */
+        z-index: 2;
+        transition: right 0.5s;
     }
 
     nav li {
@@ -917,6 +922,80 @@ video:hover{
         text-align: left; /* Aligns the text to the left within the list items */
     }
 
+    #menu-bars {
+        display: block; /* Only visible on small screens */
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 25px;
+        z-index: 5;
+    }
+
+
+    /*  <img src="images/sun.png" id="icon">*/
+
+    #icon {
+        display: block; /* Ensures the image is visible and treated as a block element */
+        position: absolute; /* Position the image absolutely within the nav */
+        top: 10px; /* Adjust this value to align it with the other icons vertically */
+        left: 10px; /* Positions the image 10px from the left edge of the nav */
+        z-index: 5; /* Ensures it's above the other elements, same as the icons */
+    }
+
+    .subtitle{
+        font-size: 40px;
+    }
+
+    .about-col-1, .about-col-2{
+        flex-basis: 100%;
+    }
+
+    .about-col-2{
+        margin-top: 35px;
+    }
+
+    .about-col-2 p {
+        font-size: 18px;
+    }
+
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for phones */
+    }
+
+    .btn3 {
+       margin-top: 30px;
+    }
+
+    .video-section {
+        flex-direction: column;  /* Stacks flex items vertically */
+        align-items: stretch;  /* Stretches items to fit the container width */
+    }
+
+    .video-description, video {
+        max-width: 100%;  /* Ensures both elements take full container width */
+        margin-left: 0;  /* Removes the margin between description and video */
+        margin-top: 20px;  /* Adds space above the description after the video */
+        flex: none;  /* Overrides any previous flex sizing */
+        font-size: 20px;
+    }
+
+    video {
+        margin-bottom: 20px;  /* Adds space below the video before the description */
+    }
+
+    .contactLeft, .contactRight{
+        flex-basis: 100%;
+    }
+
+    .contactRight form {
+        width: 100%; /* Ensures form takes full width of its parent */
+        padding: 0; /* Removes padding that could affect children elements */
+        margin: 0; /* Ensures no extra space around the form */
+    }
 }
 
-
+#msg{
+    color: darkgreen;
+    margin-top: -20px;
+    display: block;
+}

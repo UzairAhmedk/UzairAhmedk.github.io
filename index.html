@@ -13,21 +13,21 @@
     <div class="container">
         <nav>
             <img src="images/logo.png" class="logo" id="logo">
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Portfolio </a></li>
-                <li><a href="#">Creative</a></li>
-                <li><a href="#">Contact</a></li>
-                <i class="fa-solid fa-x"></i>
+            <ul id="sidemenu">
+                <li><a href="#header">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">Portfolio </a></li>
+                <li><a href="#creative">Creative</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <i class="fa-solid fa-x" onclick="closemenu()" id="menu-x"></i>
             </ul>
             <img src="images/sun.png" id="icon">
-            <i class="fa-solid fa-bars"></i>
+            <i class="fa-solid fa-bars" onclick="openmenu()" id="menu-bars"></i>
         </nav>
         <div class="header-text">
             <p class="text">Computer Science Student...</p>
-            <h1 class="text2">Hi, I am <span>Uzair</span><br> This is my Personal Website</h1>
+            <h1 class="text2">Hi, I am <span>Uzair</span><br> This is my Personal <br> Website!</h1>
         </div>
  </div>
 
@@ -218,12 +218,13 @@
                 <a href="images/my-cv.pdf" download class="btn btn2">Download CV</a>
             </div>
             <div class="contactRight">
-                <form>
+                <form name="submit-to-google-sheet">
                     <input type="text" name="Name" placeholder="Your Name" required>
-                    <input type="email" name="email" placeholder="Your Email" required>
-                    <textarea name="Message" id="" rows="6" placeholder="Your Message"></textarea>
+                    <input type="email" name="Email" placeholder="Your Email" required>
+                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
                     <button type="submit" class="btn btn2">Submit</button>
                 </form>
+                <span id="msg"></span>
             </div>
         </div>
     </div>
@@ -265,6 +266,53 @@ function opentab(tabname){
 
 </script>
 
+<script>
+
+function openmenu() {
+    var side = document.getElementById("sidemenu");
+    var width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth; // Get screen width
+
+    if (width <= 600) { // Check if screen width is 600px or less
+        side.style.right = "0";
+        document.getElementById("menu-bars").style.display = "none";
+        document.getElementById("menu-x").style.display = "block";
+    }
+}
+
+function closemenu() {
+    var side = document.getElementById("sidemenu");
+    var width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth; // Get screen width
+
+    if (width <= 600) { // Check if screen width is 600px or less
+        side.style.right = "-200px";
+        document.getElementById("menu-bars").style.display = "block";
+        document.getElementById("menu-x").style.display = "none";
+    }
+}
+</script>
+
+  
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbzv5H35ZCzN8nSltA-BgYftETvDcktc46oGo3IeaMMZncSEog1UaZj5KsL2T5sVJJNS/exec';
+    const form = document.forms['submit-to-google-sheet'];
+    const msg = document.getElementById("msg"); // Make sure you have an element with id="msg" in your HTML
+
+    form.addEventListener('submit', e => {
+        e.preventDefault(); // Prevent the default form submission
+        fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+            .then(response => {
+                msg.innerHTML = "Thank you! Message Sent."; // Display success message
+                setTimeout(() => { // Corrected syntax for setTimeout
+                    msg.innerHTML = ""; // Clear message after 5 seconds
+                }, 5000);
+                form.reset(); // Reset the form after the message is sent
+            })
+            .catch(error => { // Properly placed catch for handling errors
+                console.error('Error!', error.message);
+                msg.innerHTML = "Failed to send message. Please try again."; // Display error message
+            });
+    });
+</script>
 
 </body>
 </html>
