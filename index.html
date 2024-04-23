@@ -250,19 +250,45 @@ function opentab(tabname){
     document.getElementById(tabname).classList.add("activeTab")
 }
 
-    var icon = document.getElementById('icon')
-    var logo = document.getElementById('logo')
+document.addEventListener('DOMContentLoaded', function() {
+    const icon = document.getElementById('icon');
+    const logo = document.getElementById('logo');
+    const storedTheme = localStorage.getItem('theme'); // Retrieve the stored theme
 
-    icon.onclick = function(){
-        document.body.classList.toggle("light-theme")
-        if(document.body.classList.contains("light-theme")){
-            icon.src = "images/moon.png"
-            logo.src = "images/logo2.png"
-        }else{
-            icon.src = "images/sun.png"
-            logo.src = "images/logo.png"
+    // Check if the stored theme is 'light-theme' and apply it
+    if (storedTheme === 'light-theme') {
+        document.body.classList.add('light-theme');
+    }
+
+    // Set initial icons based on the current theme
+    updateIcons();
+
+    icon.addEventListener('click', function() {
+        // Toggle theme class on body
+        document.body.classList.toggle('light-theme');
+
+        // Update stored theme in localStorage based on the current state
+        if (document.body.classList.contains('light-theme')) {
+            localStorage.setItem('theme', 'light-theme');
+        } else {
+            localStorage.setItem('theme', 'dark-theme'); // Since dark is the default, we save it explicitly
+        }
+
+        // Update icons after toggle
+        updateIcons();
+    });
+
+    function updateIcons() {
+        // Update icon source based on whether the light theme is active
+        if (document.body.classList.contains('light-theme')) {
+            icon.src = "images/moon.png"; // Icon for dark mode
+            logo.src = "images/logo2.png"; // Alternate logo for dark mode
+        } else {
+            icon.src = "images/sun.png"; // Icon for light mode
+            logo.src = "images/logo.png"; // Assume default logo for light mode
         }
     }
+});
 
 </script>
 

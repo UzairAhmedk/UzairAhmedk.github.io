@@ -909,7 +909,7 @@ video:hover{
         padding-left: 0; /* Removes left padding if any, allowing list items to align to the very left */
         padding-right: 0; /* Removes right padding if any */
         text-align: left; /* Ensures that the text aligns to the left side */
-        z-index: 2;
+        z-index: 1000;
         transition: right 0.5s;
     }
 
